@@ -1,5 +1,54 @@
 
-const selectElement = document.getElementById('cohorts');
+const extractJSON= (url) => {
+ fetch (url)
+ .then(res => res.json())
+ .then(data => {
+   listaCohorts(data)
+   //console.log (data);
+})
+
+const listaCohorts = (data) => {
+ console.log(data);
+}
+}
+
+
+extractJSON('../data/cohorts.json');
+
+/* const selectElement = document.getElementById("cohorts");
+ selectElement.innerHTML+=result.id 
+
+
+
+const selectElementU = document.getElementById("users");
+extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
+ selectElementU.innerHTML += result.name
+ 
+const selectElementP = document.getElementById('progress')
+extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const selectElement = document.getElementById('cohorts');
 extraerJSON('../data/cohorts.json', (err, json) => {
   if (err) {
     // algo salio mal...
@@ -7,12 +56,13 @@ extraerJSON('../data/cohorts.json', (err, json) => {
   }
   const sedes = json;
   console.log(sedes);
-   for(let i =0; i< sedes.length; i++){
-     if(sedes[i].id.substr(0,3)=== 'lim'){
-    const liElements = document.createElement('li');
-    liElements.textContent= sedes[i].id;
-    selectElement.appendChild(liElements);
-   } }
+  for (let i = 0; i < sedes.length; i++) {
+    if (sedes[i].id.substr(0, 3) === 'lim') {
+      const liElements = document.createElement('li');
+      liElements.textContent = sedes[i].id;
+      selectElement.appendChild(liElements);
+    }
+  }
 
   const selectElementU = document.getElementById('users');
   extraerJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json', (err, json) => {
@@ -22,15 +72,16 @@ extraerJSON('../data/cohorts.json', (err, json) => {
     }
     const users = json;
     console.log(users);
-       for(let i =0; i< users.length; i++){
-        const optionsElemntsU=document.createElement('option');
-        const contenidoOptionsU= document.createTextNode(users[i].name);
-        optionsElemntsU.appendChild(contenidoOptionsU);
-        selectElementU.appendChild(optionsElemntsU);
-          
-          } 
+    pintar(users)*/
+    /* for (let i = 0; i < users.length; i++) {
+      const optionsElemntsU = document.createElement('option');
+      const contenidoOptionsU = document.createTextNode(users[i].name);
+      optionsElemntsU.appendChild(contenidoOptionsU);
+      selectElementU.appendChild(optionsElemntsU);
 
-    const selectElementP = document.getElementById('progress');
+    } */
+
+    /*const selectElementP = document.getElementById('progress');
     extraerJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', (err, jsonP) => {
       if (err) {
         // algo salio mal...
@@ -38,19 +89,19 @@ extraerJSON('../data/cohorts.json', (err, json) => {
       }
       const progress = jsonP;
       console.log(progress);
-      console.log(progress.length); 
+      console.log(progress.length);
 
 
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < progress.length; i++) {*/
 
-/*         const optionsElemntsP=document.createElement('li');
-        const contenidoOptionsP= document.createTextNode(progress[[i].id].intro.units.parts[6].exercises.completed);
-        optionsElemntsP.appendChild(contenidoOptionsP);
-        selectElementP.appendChild(optionsElemntsP);
-        console.log(progress[i].id.intro.units.parts.exercises.completed); */
-        console.log(progress[users[i].id].intro.units['02-variables-and-data-types'].parts['04-guided-exercises'].completed);
-        
+        /*         const optionsElemntsP=document.createElement('li');
+                const contenidoOptionsP= document.createTextNode(progress[[i].id].intro.units.parts[6].exercises.completed);
+                optionsElemntsP.appendChild(contenidoOptionsP);
+                selectElementP.appendChild(optionsElemntsP);
+                console.log(progress[i].id.intro.units.parts.exercises.completed); */
+        /*console.log(progress[users[i].id].intro.units['02-variables-and-data-types'].parts['04-guided-exercises'].completed);
+
 
 
       }
@@ -59,6 +110,17 @@ extraerJSON('../data/cohorts.json', (err, json) => {
   })
 
 })
+ pintar = (usersData) =>{
+
+for (let i = 0; i < usersData.length; i++) {
+      const optionsElemntsU = document.createElement('option');
+      const contenidoOptionsU = document.createTextNode(usersData[i].name);
+      optionsElemntsU.appendChild(contenidoOptionsU);
+      selectElementU.appendChild(optionsElemntsU);
+
+}
+
+*/
 
 
 
