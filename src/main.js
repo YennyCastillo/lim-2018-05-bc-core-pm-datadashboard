@@ -1,50 +1,3 @@
-<<<<<<< HEAD
-
-const extractJSON= (url) => {
- fetch (url)
- .then(res => res.json())
- .then(data => {
-   listaCohorts(data)
-   //console.log (data);
-})
-
-const listaCohorts = (data) => {
- console.log(data);
-}
-}
-
-
-extractJSON('../data/cohorts.json');
-
-/* const selectElement = document.getElementById("cohorts");
- selectElement.innerHTML+=result.id 
-
-
-
-const selectElementU = document.getElementById("users");
-extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
- selectElementU.innerHTML += result.name
- 
-const selectElementP = document.getElementById('progress')
-extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 const buttonSiguient = document.getElementById("map");
 buttonSiguient.addEventListener("click" , ()=>{
   document.getElementById("map").style.display = "none";
@@ -52,124 +5,41 @@ buttonSiguient.addEventListener("click" , ()=>{
   document.getElementById("principal").style.display = "block";
   document.getElementById("secundario").style.display = "block";
 });
->>>>>>> 5eea913ef1e13ab20d069c96428f753dd33a0932
 
+let courses={}
+let users={}
+let progress={}
+  let cohortData = fetch("../data/cohorts.json")
+  .then((res) => {return res.json()});
+   let usersData = fetch("../data/cohorts/lim-2018-03-pre-core-pw/users.json")
+   .then((res) => {return res.json()});
+     let progressData = fetch("../data/cohorts/lim-2018-03-pre-core-pw/progress.json")
+    .then((res) => {return res.json()});
 
+    Promise.all([cohortData, usersData, progressData]).then(data => {
+                  courses = data[0]
+                  users = data[1]
+                  progress = data[2]
+                  computeUsersStats(courses, users, progress)
+                })
+                .catch((err) =>{ })
 
-
-<<<<<<< HEAD
-
-/*const selectElement = document.getElementById('cohorts');
-extraerJSON('../data/cohorts.json', (err, json) => {
-  if (err) {
-    // algo salio mal...
-    return console.log(); (err);
-  }
-  const sedes = json;
-  console.log(sedes);
-  for (let i = 0; i < sedes.length; i++) {
-    if (sedes[i].id.substr(0, 3) === 'lim') {
-      const liElements = document.createElement('li');
-      liElements.textContent = sedes[i].id;
-      selectElement.appendChild(liElements);
-    }
-  }
-
-  const selectElementU = document.getElementById('users');
-  extraerJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json', (err, json) => {
-    if (err) {
-      // algo salio mal...
-      return console.log(); (err);
-    }
-    const users = json;
-    console.log(users);
-    pintar(users)*/
-    /* for (let i = 0; i < users.length; i++) {
-      const optionsElemntsU = document.createElement('option');
-      const contenidoOptionsU = document.createTextNode(users[i].name);
-      optionsElemntsU.appendChild(contenidoOptionsU);
-      selectElementU.appendChild(optionsElemntsU);
-
-    } */
-
-    /*const selectElementP = document.getElementById('progress');
-    extraerJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', (err, jsonP) => {
-      if (err) {
-        // algo salio mal...
-        // return console.error(err);
-      }
-      const progress = jsonP;
-      console.log(progress);
-      console.log(progress.length);
-
-
-
-      for (let i = 0; i < progress.length; i++) {*/
-
-        /*         const optionsElemntsP=document.createElement('li');
-                const contenidoOptionsP= document.createTextNode(progress[[i].id].intro.units.parts[6].exercises.completed);
-                optionsElemntsP.appendChild(contenidoOptionsP);
-                selectElementP.appendChild(optionsElemntsP);
-                console.log(progress[i].id.intro.units.parts.exercises.completed); */
-        /*console.log(progress[users[i].id].intro.units['02-variables-and-data-types'].parts['04-guided-exercises'].completed);
-
-
-
-      }
-    })
-
-  })
-
-})
- pintar = (usersData) =>{
-
-for (let i = 0; i < usersData.length; i++) {
-      const optionsElemntsU = document.createElement('option');
-      const contenidoOptionsU = document.createTextNode(usersData[i].name);
-      optionsElemntsU.appendChild(contenidoOptionsU);
-      selectElementU.appendChild(optionsElemntsU);
-
-}
-
-*/
-
-
-
-
-
-
-
-
-/*extractJSON('../data/cohorts.json')
-
-extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
-
-extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-const sedes= json;
-
-const optionsElemnts=document.createElement('option');
-const contenidoOptions= document.createTextNode(sedes[i].id);
-optionsElemnts.appendChild(contenidoOptions);
-selectElement.appendChild(optionsElemnts);
-console.log(sedes[i].id);
-document.getElementById('sedes').appendChild(optionsElemnts);
-*/
-=======
-tabCohorts = document.getElementById("cohorts");
-tabUsers = document.getElementById("users");
-
-const listaCohorts = (data) => {
-  for(let i of data){
-     console.log (i);
-     document.getElementById("cohorts").innerHTML+= "<option>" + i.id + "</option>";
-   }
-}
-extractJSON('../data/cohorts.json',listaCohorts);
-
-const listaUsuarios = (data) => {
-  for(let i of data){
-     console.log (i);
-   }
-}
-extractJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json',listaUsuarios);
->>>>>>> 5eea913ef1e13ab20d069c96428f753dd33a0932
+//Evento para mostrar cohorts- sedes
+ const cohortsData = document.getElementById("cohorts");
+ const userData = document.getElementById("users");
+//  sedeLim.addEventListener("click", () => {
+  const extractJSON = (url, callback) => {
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => callback(data))
+        .catch((err) => console.log(err));
+};
+extractJSON("../data/cohorts.json", (data) => {
+  for (let i of data) {
+    console.log(i);
+  if(i.id.substr(0,3)=== 'lim'){
+    const optionsElemntsC=document.createElement('option');
+    const contenidoOptionsC= document.createTextNode(i.id);
+    optionsElemntsC.appendChild(contenidoOptionsC);
+    cohortsData.appendChild(optionsElemntsC);
+  }}})

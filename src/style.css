@@ -42,12 +42,15 @@
   width:200px;
   line-height: 1ex;
   }
-
+  
   #map{
-    float:right;
+    float:left;
    
   }  
 
+  #principal{
+ clear : both;
+  }
 input{
   border-radius: 10px;
   padding: 10px;
