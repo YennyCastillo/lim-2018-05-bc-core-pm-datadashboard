@@ -1,64 +1,43 @@
-@media only screen and (max-width:800px) {
-  /* Para tablets: */
-  .main {
-    width: 80%;
-    padding: 0;
-  }
-  .right {
-    width: 100%;
-  }
-  }
-
-@media only screen and (max-width:500px) {
-  /* Para celulares: */
-  .menu, .main, .right {
-    width: 100%;
-  }
-  }
-
-@font-face{
-  font-family:'OpenSans';
-  font-style: normal;
-  src: url('tipografias/OpenSans-Regular.ttf');
-}
-
-#lista, #principal, #secundario {
-  padding: 10px;
-  position: relative;
-  font-family: 'OpenSans';
-  display:block;
-  margin-left: 0%;
-  background: #f5f5f0;
-  width:22%;
-  height:30%;
-  display: inline-block;
-}
-
-/* line-heigh, para el espacio estre las opciones li:*/
-.item {
-  padding: 15px;
-  text-align: left;
-  border: 1px;
-  width:200px;
-  line-height: 1ex;
-  }
-  
-  #map{
-    float:left;
-   
-  }  
-
-  #principal{
- clear : both;
-  }
-input{
-  border-radius: 10px;
-  padding: 10px;
-  font-weight: 200;
-  font-size: 12px;
-  cursor: pointer;  
-  }
-
-  #container {
-    float: inherit;
+    @font-face{
+      font-family:'OpenSans';
+      font-style: normal;
+      src: url('tipografias/OpenSans-Regular.ttf');
     }
+    
+    body{
+      font-family:'OpenSans'; 
+    }
+    
+    .contain {
+      width: 30%;
+      float: right;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width:100%;
+      background-size:cover;
+    } 
+    
+    .row.content {height: 208px}
+    
+    .sidenav {
+      padding: 5%;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    .cohort {
+      background-color: yellow;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+
+    
