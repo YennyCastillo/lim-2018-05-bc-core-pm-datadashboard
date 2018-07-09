@@ -1,43 +1,88 @@
-    @font-face{
-      font-family:'OpenSans';
-      font-style: normal;
-      src: url('tipografias/OpenSans-Regular.ttf');
-    }
-    
-    body{
-      font-family:'OpenSans'; 
-    }
-    
-    .contain {
-      width: 30%;
-      float: right;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      max-width:100%;
-      background-size:cover;
-    } 
-    
-    .row.content {height: 208px}
-    
-    .sidenav {
-      padding: 5%;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    .cohort {
-      background-color: yellow;
-      margin: 20px;
-      border-radius: 10px;
-    }
-    
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
+ /* ----------------media queries--------------- */
+@media (min-width:1200px){
+  .container{
+     width: 20px;
+     text-align: left;
+   }
+  .row.content {height:auto;} 
+  .contain{
+    width: 50%;
+  }
+}
 
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+    text-align: left;
+  }
+  .row.content {height:auto;} 
+  .contain{
+    padding-bottom: 50%;
+    width: 10%;
+  }
+}
 
-    
+@media (min-width:480px){
+   .container-fluid{
+      display:block;
+    }
+  .row.content {height:auto;} 
+  .contain{
+    display: none;
+  }
+}
+
+/* ----------------tipografía--------------- */
+@font-face{
+  font-family:'OpenSans';
+  font-style: normal;
+  src: url('tipografias/OpenSans-Regular.ttf');
+}
+
+/* --------anatomia de la pagina------------ */
+
+body{
+  font-family:'OpenSans'; 
+}
+
+.contain {
+  width: 25%;
+  float: right;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width:80%;
+  background-size:cover;
+} 
+
+.row.content {height: 208px}
+
+/* bloque izq fondo gris */
+.sidenav {
+  padding: 15%;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.cohort {
+  background-color: yellow;
+  margin: 20px;
+  border-radius: 10px;
+  width: 350px;
+  height: 100px;
+}
+
+/* alumnas */
+.myInput{
+  align-items: left;
+}
+
+.content {
+  border-radius: 10px;
+  background-color: yellow;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  margin: 20px;
+  float: left;
+}

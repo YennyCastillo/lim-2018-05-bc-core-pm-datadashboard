@@ -19,6 +19,11 @@ const extractJSON = (str, url, callback) => {
 
 const selectionSede = document.getElementById("map");
 const container = document.getElementById("result");
+const filtro = document.getElementById("filtOrder");
+const OrderBy = document.getElementById("OrderBy");
+const selectDirection = document.getElementById("Direction");
+const textAuto = document.getElementById("textAuto");
+
 
 const options = {
   cohort:null,
@@ -40,7 +45,7 @@ console.log(newArrCohort);
  let content = '';
 newArrCohort.forEach(cohort =>{
   console.log(newArrCohort);
- content += `<div id=${cohort.id} class='cohort'>${cohort.id}</div>` 
+ content += `<div id=${cohort.id} class='cohort']>${cohort.id}</div>` 
 });
  container.innerHTML= content;
 }
@@ -51,12 +56,19 @@ const procesProgress = (idCohort, objProgress)=> {
   const studentsStats = processCohortData(options);
   console.log(studentsStats);
   let template = '';
-  studentsStats.forEach((objStudentsStats ) => {
-  template += `<div id=${objStudentsStats.name} class='cohort'>${objStudentsStats.name}</div>
-  <div id=${objStudentsStats.stats.exercises.completed} class='cohort'>${Math.floor(objStudentsStats.stats.exercises.completed)}</div>
-  <div id=${objStudentsStats.stats.exercises.total} class='cohort'>${Math.floor(objStudentsStats.stats.exercises.total)}</div>
-  `   });
-  container2.innerHTML = template;
+  studentsStats.forEach((objStudentsStats) => {
+   template += `
+   <div class='content'> 
+<p> ${objStudentsStats.name} </P>
+<p>Completitud:${Math.floor(objStudentsStats.stats.percent)}</P>
+<p>${Math.floor(objStudentsStats.stats.exercises.total)}</P>
+<p></P>
+<p></P>
+<p></P>
+</div>
+     `  
+     });
+  container.innerHTML = template;
 }
 
 const procesUsers = (idCohort, arrUsers) => {
@@ -94,67 +106,12 @@ container.addEventListener("click", event => {
 })
  
 
+OrderBy.addEventListener("change", () => {
+  let contenido=OrderBy.value;
+  options.orderBy = contenido;
+})
 
-//Obtener data con fetch y promise all
-//  let courses={}
-// let users={}
-// let progress={}
-//   let cohortData = fetch("../data/cohorts.json")
-//   .then((res) => {return res.json()});
-//    let usersData = fetch("../data/cohorts/lim-2018-03-pre-core-pw/users.json")
-//    .then((res) => {return res.json()});
-//      let progressData = fetch("../data/cohorts/lim-2018-03-pre-core-pw/progress.json")
-//     .then((res) => {return res.json()});
-//     Promise.all([cohortData, usersData, progressData]).then(data => {
-//                   courses = data[0]
-//                   users = data[1]
-//                   progress = data[2]
-//             computeUsersStats = (users, progress, courses)
-//                 })
-//                 .catch((err) =>{ })
-// //Evento para mostrar cohorts- sedes
-//  const cohortsData = document.getElementById("cohorts");
-// //  sedeLim.addEventListener("click", () => {
-// const coursesC = (url, callback) => {
-//     fetch(url)
-//         .then((response) => response.json())
-//         .then((data) => callback(data))
-//         .catch((err) => console.log(err));
-// };
-// coursesC("../data/cohorts.json", (data) => {
-//   for (let i of data) {
-//       console.log(i);
-//     if(i.id.substr(0,3)=== 'lim'){
-//       const optionsElemntsC=document.createElement('option');
-//       const contenidoOptionsC= document.createTextNode(i.id);
-//       optionsElemntsC.appendChild(contenidoOptionsC);
-//       cohortsData.appendChild(optionsElemntsC);
-//     }}});
-//
-//     users.addEventListener('change', () => {
-//       if (listCohorts.value === 'lim-2018-03-pre-core-pw') {
-//         const mysubtittle = document.createElement('h1');
-//         mysubtittle.textContent = "lim-2018-03-pre-core-pw";
-//          subtittle.appendChild(mysubtittle);
-//         let courses = [];
-//         if (data[1].id === 'lim-2018-03-pre-core-pw') {
-//           for (key in values[2].coursesIndex) {
-//             values[2].push(key);
-//           }
-//         }
-//         functionUser(values[2], values[3], courses);
-//       } else {
-//         alert("Aún no hay datos");
-//       }
-//     })
+selectDirection.addEventListener('change', () => {
 
-// extractJSON(id, "../data/cohorts.json", (data) => {
-//   console.log(data);
-// });
-
-// extractJSON(id, "../data/cohorts/lim-2018-03-pre-core-pw/users.json", (data) => {
-//   console.log(data);
-// });
-// extractJSON(id, "../data/cohorts/lim-2018-03-pre-core-pw/progress.json", (data) => {
-//   console.log(data);
-// });
+ alert("HOla mundo")
+})

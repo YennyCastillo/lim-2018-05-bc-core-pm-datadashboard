@@ -1,66 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
- <head>
-   <meta charset="utf-8">
-   <title>Laboratoria LMS</title>
-   <link rel="stylesheet" href="style.css" />
-   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  </head>
- <body>
-   <div align="center" class="init" id="init">
-      <h1 class="title"><img style="float:center" src="imagenes/Laboratoria_RGB_logo-06.png" width="250" height="70" alt="Logo"></h1>
-   </div>
-  <div id="container">
-    <div align="center" style="float:left" class="lista" id="lista">
-        <p>ALEJANDRA</p>
-        <p>alejandra@laboratoria.la</p>
-          <ul>
-            <li class="item" target="_blank">CURSOS</li>
-            <li class="item" target="_blank">COHORTS</li>
-            <li class="item" target="_blank">ESTADÍSTICAS</li>
-            <li class="item" target="_blank">CONFIGURACIÓN</li>
-          </ul>
-    </div>
-   <div class="Map" id="map">
-     <img style="float:right" src="imagenes/fondomapa.png" width=1200px height="auto" max-width:"100%" alt="Mapa sedes Laboratoria" usemap="#map">
-     <map name="map">
-       <area id="sedeGdl" shape="circle" coords="550,50,10"/>
-       <area id="sedeCdmx" shape="circle" coords="580,75,10"/>
-       <area id="sedeLim" shape="circle" coords="720,290,15"/>
-       <area id="sedeSpl " shape="circle" coords="890,377,15"/>
-       <area id="sedeScl" shape="circle" coords="750,460,15"/>
-     </map>
-   </div>
-   <div>
-     <ul id="sedes">
-       <li>Guadalajara</li>
-       <li>Ciudad de México</li>
-       <li>Lima</li>
-       <li>Sao Paulo</li>
-       <li>Santiago de chile</li>
-     </ul>
-   </div>
-    <div>
-      <section id="result"></section>
-    </div>
-    <div id="secundario">
-      <h3>ALUMNAS</h3>
-        <form autocomplete="off" action="/action_page.php">
-          <div class="autocomplete" style="width:700px;">
-            <input id="myInput" type="text" name="myName" placeholder="Elige un nombre"><br><br>
-            <input type="button" value="Buscar">
-          </div>
-        </form>
-      <script src="data.js"></script>
-      <script src="main.js"></script>
-      </div>
-    </div>
-    </body>
-  </html> -->
-
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -68,7 +6,7 @@
       <link rel="stylesheet" href="style.css" />
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-	</head>
+  </head>
  <body>
   <header>
    <div align="center" class="init" id="init">
@@ -78,36 +16,36 @@
 
     <div class="contain">
      <div class="float-right" id ="map">
-       <img class="pull-right" src="imagenes/fondomapa.png" width=1200px height="auto" max-width:"100%" alt="Mapa sedes Laboratoria" usemap="#map">
+       <img class="img-responsive" src="imagenes/fondomapa.png" width=1200px height="auto" max-width:"100%" alt="Mapa sedes Laboratoria" usemap="#map">
         <map name="map">
           <area id="gdl" shape="circle" coords="550,50,10"/>
           <area id="cdmx" shape="circle" coords="580,75,10"/>
-          <area id="lim" shape="circle" coords="720,290,10"/>
-          <area id="spl" shape="circle" coords="890,377,10"/>
-          <area id="scl" shape="circle" coords="750,460,10"/>
+          <area id="lim" shape="circle" coords="720,290,15"/>
+          <area id="spl" shape="circle" coords="890,377,15"/>
+          <area id="scl" shape="circle" coords="750,460,15"/>
         </map>
      </div> 
     </div>  
 
-  <div id="container"></div>div>
-  <div id="container2"></div>div>
+  <div id="container">
 
-      <div class="container-fluid text-center">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-3 sidenav">
+          <div class="col-sm-4 sidenav">
             <p>ALEJANDRA</p>
-            <p>alejandra@laboratoria.la</p>
+            <p>alejandra@laboratoria.la</p><br><br>
             <p><a href="#">CURSOS</a></p>
             <p><a href="#">COHORTS</a></p>
             <p><a href="#">ESTADÍSTICAS</a></p>
             <p><a href="#">CONFIGURACIÓN</a></p>
-					</div>
-				</div>
-			</div>	
-        
-      <div class="container-fluid text-center">
+          </div>
+        </div>
+      </div>  
+        <div id="result">
+        </div>
+      <!-- <div class="container-fluid">
         <div class="row content">
-          <div class="col-sm-3 sidenav">      
+          <div class="col-sm-4 sidenav">      
             <div class="sedes">
                <ul id="sedes">
                  <li>Guadalajara</li>
@@ -115,16 +53,47 @@
                  <li>Lima</li>
                  <li>Sao Paulo</li>
                  <li>Santiago de chile</li>
-							 </ul>
-						</div>
+               </ul>
+            </div>
           </div>
-				</div>
+        </div>
       </div>
-      <div id="result"></div>
+      <br> -->
+      <div id="tabla" >
+        <div class="contain2">
+          <div id="Filtros">
+            <div id="buscador">
+              <p>Alumnas: </p>
+              <input type="text" placeholder="Buscar nombre" id="textAuto">
+            </div>
+            <section id="filtOrder">
+                <p>Filtros: </p>
+              <select id="OrderBy">
+                <option value="-">Ordenar Por ...</option>
+                <option value="Name">Nombre</option>
+                <option value="Completitud">Completitud</option>
+                <option value="Ejercicios">Excercises</option>
+                <option value="Lecturas">Lecturas</option>
+                <option value="Quizzes">Quizzes</option>
+                <option value="QuizzesScore">QuizzesScore</option>
+              </select>
+              <select id="Direction">
+                <option value="-">Ordenar Por ...</option>
+                <option value="Ascendente">Ascendente</option>
+                <option value="Descendente">Descendente</option>
+              </select>
+            </section>
+          </div>
+        </div> 
+      
+        <div class="container bg-2 text-center" id="result">
+        </div>
+      <div id="result2"></div>
+    </div>
 
-    <div class="container-fluid text-center">
+    <!-- <div class="container-fluid">
       <div class="row content">
-        <div class="col-sm-3 sidenav">     
+        <div class="col-sm-4 sidenav">     
           <div class="alumnas">
               <h3>ALUMNAS</h3>
               <form autocomplete="off" action="/action_page.php">
@@ -135,7 +104,7 @@
           </div>
         </div>
       <div>
-		</div>
+    </div> -->
   </div>
 
       <script src="data.js"></script>
