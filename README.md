@@ -1,28 +1,48 @@
 # Proyecto #2  
 ### Data Dashboard
-Data Dashboard  nace como una herramienta que nos permite recoger data y transformarla en información valiosa para nuestros usuarios (Training Manager de Laboratoria) ayudándolos a tener de una manera sencilla y dinámica información que les permita medir el desempeño de sus alumnas para poyarlas en su aprendizaje y desarrollo personal.
+Data Dashboard  nace como una herramienta que nos permite recoger data y transformarla en información valiosa para nuestros usuarios (Training Manager de Laboratoria) ayudándolos a tener de una manera sencilla y dinámica información que les permita medir el desempeño de sus alumnas para apoyarlas en su aprendizaje y desarrollo personal.
+
 
 #### User Experience Design:
 
-#### 1) Definición del producto:
-Data Dashboard es una aplicación fácil de usar y entender que se puede adaptar a una pc convencional como a varios dispositivos móviles. Para realizar esta aplicación realizamos lo siguiente: 
+#### Objetivos:
 
-1.	Empezamos creando un Sketch que reflejara los requerimientos de los usuarios complementandolo con una entrevista (Training Manager) donde incluía una serie de preguntas para obtener un feedback .
+Nuestro principal objetivo es hacer que  esta aplicacion cumpla con los requerimientos de nuestros usuarios, haciendo que la interacción del usuario con la interfaz se convierta en una experiencia agradable.
+
+#### 1) Definición del producto:
+
+Data Dashboard es una aplicación fácil de entender  y usar,que se adapata a cualquier pc convencional como a varios dispositivos móviles. Para crear esta aplicación realizamos lo siguiente: 
+
+1.	Empezamos creando un Sketch que reflejara los requerimientos de los usuarios complementandolo con una entrevista (Training Manager) donde incluía una serie de preguntas para obtener feedback del mismo .
 
 2.	Posterior a haber recibido el feedback creamos un nuevo Sketch incluyendo las recomendaciones obtenidas a través de la entrevista.
 
-3.	Diseñamos un prototipo en el que modificamos nuestro diseño inicial de la app y empezar a codear. 
-
-El principal objetivo de los usuarios es analizar la mayor cantidad de datos del LMS respecto al progreso de las estudiantes para ayudarlas en su aprendizaje. 
-
+3.	Diseñamos un prototipo de alta fidelidad que nos guiara en el desarrollo de la interfaz.
 
 
 #### Informe de la entrevista:
-El día lunes 11 de junio realizamos una entrevista al usuario que en este caso es la Training Manager de Lima, Alejandra, quien nos comentó que le gustó el sketch que le presentamos y que siguiéramos con la idea que tenemos del proyecto Data Dashboard.
-Nos dijo que preferiría que esta información esté acoplada en el LMS (en la lista de la izquierda, a continuación de “Mis cursos” y “Configuración”), por lo que aquí ya tiene un usuario y contraseña, así que le sería más simple que abrir otra ventana e ingresar sus datos nuevamente.
-En la página que sigue después de filtrar la alumna, le presentamos con el nombre de la alumna y el id, nos sugirió que retiremos el id porque es un texto que le confundía, así que era suficiente con el nombre y apellido de la estudiante.
-Referente a los gráficos de completitud del Data Dashboard, prefirió que sean tablas en vez de círculos ya que se puede distinguir mejor en cada columna un porcentaje total en cada uno de los temas (Ejercicios autocompletados, Quiz, Lectura).
-Le preguntamos también sobre cada cuanto revisaría la información del Data Dashboard, lo que nos dijo es que lo revisaría al final de cada Sprint para ver cual fue el avance semanal de los estudios de los temas y comparar con el avance del proyecto, para evaluar mejor los cambios respecto a un proyecto anterior lo revisaría a fin de cada proyecto.
+
+Entrevistada: srta. Alejandra - Training Manager de laboratoria - sede Lima.
+
+Herramientas utilizadas: Entrevista y sketch de como sería nuestra aplicación.
+
+Conclusiones: 
+
+** Con la entrevista se concluye:
+> Que la aplicacion Data-Dashboard sería una herramienta de mucha utilidad para las Training Managers pues les ayudaría medir de una manera eficiente el desempeño de las alumnas de Laboratoria. 
+
+> Que ésta aplicación no necesitaría de un usuario ya que deberá de incluirse dentro del LMS de Laboratoria.
+
+> que esta apliación sería revisada al final de cada Sprint.
+
+** Con el sketch se concluye:
+> Que el diseño del sketch se adapta a los requerimientos del usuario (sketch que se muestra líneas mas abajo).
+
+> Que en el contenido que se desea mostrar en la aplicación habian datos innecesarios (Id de las alumnas).
+
+> Que los gráficos que se deseaban mostrar(gráficas de círculos)  sería mejor mostrarlos en tablas ya que  le permitiria visualizar mejor la información.
+
+ 
 
 #### 2) Sketch de la solución (prototipo de baja fidelidad)
 - Realizado a mano alzada con lápiz y papel.

@@ -1,113 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-      <title>Laboratoria LMS</title>
-      <link rel="stylesheet" href="style.css" />
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  </head>
- <body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Laboratoria LMS</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
   <header>
-   <div align="center" class="init" id="init">
-      <h1><img style="float:center" src="imagenes/Laboratoria_RGB_logo-06.png" width="250" height="70" alt="Logo"></h1>
-   </div>
-  </header>
-
-    <div class="contain">
-     <div class="float-right" id ="map">
-       <img class="img-responsive" src="imagenes/fondomapa.png" width=1200px height="auto" max-width:"100%" alt="Mapa sedes Laboratoria" usemap="#map">
-        <map name="map">
-          <area id="gdl" shape="circle" coords="550,50,10"/>
-          <area id="cdmx" shape="circle" coords="580,75,10"/>
-          <area id="lim" shape="circle" coords="720,290,15"/>
-          <area id="spl" shape="circle" coords="890,377,15"/>
-          <area id="scl" shape="circle" coords="750,460,15"/>
-        </map>
-     </div> 
-    </div>  
-
-  <div id="container">
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-4 sidenav">
-            <p>ALEJANDRA</p>
-            <p>alejandra@laboratoria.la</p><br><br>
-            <p><a href="#">CURSOS</a></p>
-            <p><a href="#">COHORTS</a></p>
-            <p><a href="#">ESTADÍSTICAS</a></p>
-            <p><a href="#">CONFIGURACIÓN</a></p>
-          </div>
-        </div>
-      </div>  
-        <div id="result">
-        </div>
-      <!-- <div class="container-fluid">
-        <div class="row content">
-          <div class="col-sm-4 sidenav">      
-            <div class="sedes">
-               <ul id="sedes">
-                 <li>Guadalajara</li>
-                 <li>Ciudad de México</li>
-                 <li>Lima</li>
-                 <li>Sao Paulo</li>
-                 <li>Santiago de chile</li>
-               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br> -->
-      <div id="tabla" >
-        <div class="contain2">
-          <div id="Filtros">
-            <div id="buscador">
-              <p>Alumnas: </p>
-              <input type="text" placeholder="Buscar nombre" id="search">
-            </div>
-            <section id="filtOrder">
-                <p>Filtros: </p>
-              <select id="OrderBy">
-                <option value="-">Ordenar Por ...</option>
-                <option value="name">Nombre</option>
-                <option value="completitud">Completitud</option>
-                <option value="ejercicios">Excercises</option>
-                <option value="lecturas">Lecturas</option>
-                <option value="quizzes">Quizzes</option>
-              </select>
-              <select id="Direction">
-                <option value="-">Ordenar Por ...</option>
-                <option value="Ascendente">Ascendente</option>
-                <option value="Descendente">Descendente</option>
-              </select>
-            </section>
-          </div>
-        </div> 
-      
-        <div class="container bg-2 text-center" id="result">
-        </div>
-      <div id="result2"></div>
+    <div class="container-fluid text-center">
+      <h1>
+        <img src="imagenes/Laboratoria_RGB_logo-06.png" width="250" height="70" alt="Logo">
+      </h1>
     </div>
-
-    <!-- <div class="container-fluid">
-      <div class="row content">
-        <div class="col-sm-4 sidenav">     
-          <div class="alumnas">
-              <h3>ALUMNAS</h3>
-              <form autocomplete="off" action="/action_page.php">
-              <section class="autocomplete" style="width:700px;">
-              <input id="myInput" type="text" name="myName" placeholder="Elige un nombre"><br><br>
-              <input type="button" value="Buscar">
-              </form>
+  </header>
+  <main class="col-12">
+    <div class="row h-100">
+      <aside class="col-12 col-md-3" id="container">
+        <div class="row d-flex flex-column">
+          <div class="profile text-center pt-4 pb-4">
+            <br>
+            <img class="mb-2" src="imagenes/profile.jpeg" width="150" height="150" alt="ALEJANDRA"/>
+            <h3 class="mb-1">ALEJANDRA</h3>
+            <p class="mail">alejandra@laboratoria.la</p>
           </div>
+          <br>
+          <nav class="d-block">
+            <ul class="list-unstyled p-0">
+              <li>
+                <a>
+                  <span class="glyphicon glyphicon-book"></span> &nbsp;&nbsp; CURSOS</a>
+              </li>
+              <li>
+                <a>
+                  <span class="glyphicon glyphicon-align-justify"></span> &nbsp;&nbsp; DATA DASHBOARD</a>
+              </li>
+              <li>
+                <a>
+                  <span class="glyphicon glyphicon-stats"></span> &nbsp;&nbsp; ESTADISTICAS</a>
+              </li>
+              <li>
+                <a>
+                  <span class="glyphicon glyphicon-cog"></span> &nbsp;&nbsp; CONFIGURACIÓN</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      <div>
-    </div> -->
-  </div>
+      </aside>
+      <section class="col-12 col-md-9 p-0">
+        <div class="" id="map">
+          <img class="img-responsive" src="imagenes/fondomapa.png" width=1200px height="auto" max-width: "100%" alt="Mapa sedes Laboratoria"
+            usemap="#map">
+          <map name="map">
+            <area id="gdl" shape="circle" coords="550,50,10" />
+            <area id="cdmx" shape="circle" coords="580,75,10" />
+            <area id="lim" shape="circle" coords="720,290,15" />
+            <area id="spl" shape="circle" coords="890,377,15" />
+            <area id="scl" shape="circle" coords="750,460,15" />
+          </map>
+        </div>
+        <div id="result"></div>
+      </section>
+    </div>
+  </main>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 
-      <script src="data.js"></script>
-      <script src="main.js"></script>
- 
- </body>   
 </html>

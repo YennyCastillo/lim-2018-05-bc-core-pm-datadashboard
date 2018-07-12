@@ -57,7 +57,7 @@ window.computeUsersStats = (users, progress, courses) => {
               quiz.forEach((objectQuiz) => {
                 completed += objectQuiz.completed;
                 scoreSum += objectQuiz.score;
-                scoreAvg += scoreSum/total;
+                scoreAvg += scoreSum / total;
               })
               total += quiz.length;
 
@@ -79,7 +79,7 @@ window.computeUsersStats = (users, progress, courses) => {
       result.scoreSum = scoreSum;
       result.scoreAvg = scoreAvg;
     }
-    // console.log(result)
+    //console.log(result)
     return result;
 
   };
@@ -97,6 +97,7 @@ window.computeUsersStats = (users, progress, courses) => {
     //console.log(object)
     return object;
   })
+ // console.log(students);
   return students;
 }
 
@@ -105,65 +106,65 @@ window.computeUsersStats = (users, progress, courses) => {
 window.sortUsers = (users, orderBy, orderDirection) => {
   // Ordenar por nombre
   if (orderBy === "name" && orderDirection === "Ascendente") {
-    users.sort((a, b)=> {
+    users.sort((a, b) => {
       if (a.name.toLowerCase() > b.name.toLowerCase()) {
         return 1;
       } else if (a.name.toLowerCase() < b.name.toLowerCase()) {
         return -1;
-         
+
       }
       return 0;
     })
 
-  }else  if (orderBy === "name" && orderDirection === "Descendente") {
-    users.sort((a, b)=> {
-      if (a.name.toLowerCase() < b.name.toLowerCase() ) {
+  } else if (orderBy === "name" && orderDirection === "Descendente") {
+    users.sort((a, b) => {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
         return 1;
-      } else if (a.name.toLowerCase()  > b.name.toLowerCase() ) {
+      } else if (a.name.toLowerCase() > b.name.toLowerCase()) {
         return -1;
       }
       return 0;
     })
   }
 
-// ordenar por completitud 
+  // ordenar por completitud 
   if (orderBy === "completitud" && orderDirection === "Ascendente") {
-    users.sort((a, b)=> {
+    users.sort((a, b) => {
       return a.stats.percent - b.stats.percent;
     })
-  }else  if (orderBy === "completitud" && orderDirection === "Descendente") {
-    users.sort((a, b)=> {
-      return b.stats.percent -a.stats.percent;
+  } else if (orderBy === "completitud" && orderDirection === "Descendente") {
+    users.sort((a, b) => {
+      return b.stats.percent - a.stats.percent;
     })
   }
 
   if (orderBy === "ejercicios" && orderDirection === "Ascendente") {
-    users.sort((a, b)=> {
+    users.sort((a, b) => {
       return a.stats.exercises.percent - b.stats.exercises.percent;
     })
-  }else  if (orderBy === "completitud" && orderDirection === "Descendente") {
-    users.sort((a, b)=> {
-      return b.stats.exercises.percent -a.stats.exercises.percent;
+  } else if (orderBy === "completitud" && orderDirection === "Descendente") {
+    users.sort((a, b) => {
+      return b.stats.exercises.percent - a.stats.exercises.percent;
     })
   }
 
-  if (orderBy === "lecturas" && orderDirection ==="Ascendente") {
-    users.sort((a, b)=> {
+  if (orderBy === "lecturas" && orderDirection === "Ascendente") {
+    users.sort((a, b) => {
       return a.stats.reads.percent - b.stats.reads.percent;
     })
-  }else  if (orderBy === "completitud" && orderDirection === "Descendente") {
-    users.sort((a, b)=> {
-      return b.stats.reads.percent -a.stats.reads.percent;
+  } else if (orderBy === "completitud" && orderDirection === "Descendente") {
+    users.sort((a, b) => {
+      return b.stats.reads.percent - a.stats.reads.percent;
     })
   }
 
   if (orderBy === "quizzes" && orderDirection === "Ascendente") {
-    users.sort((a, b)=> {
+    users.sort((a, b) => {
       return a.stats.quizzes.percent - b.stats.quizzes.percent;
     })
-  }else  if (orderBy === "completitud" && orderDirection === "Descendente") {
-    users.sort((a, b)=> {
-      return b.stats.quizzes.percent -a.stats.quizzes.percent;
+  } else if (orderBy === "completitud" && orderDirection === "Descendente") {
+    users.sort((a, b) => {
+      return b.stats.quizzes.percent - a.stats.quizzes.percent;
     })
   }
 
@@ -191,7 +192,7 @@ window.processCohortData = (options) => {
   // console.log(options)
   let courses = Object.keys(options.cohort.coursesIndex);
   let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses)
-  // console.log(students)
+  console.log(students);
   // return students;
   let orderList = sortUsers(students, options.orderBy, options.orderDirection);
   let filterUser = filterUsers(orderList, options.search);
@@ -199,4 +200,3 @@ window.processCohortData = (options) => {
   console.log(options.search);
   return filterUser;
 }
-

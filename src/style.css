@@ -1,89 +1,125 @@
- /* ----------------media queries--------------- */
-@media (min-width:1200px){
-  .container{
-     width: 20px;
-     text-align: left;
-   }
-  .row.content {height:auto;} 
-  .contain{
-    width: 50%;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 90%;
-    text-align: left;
-  }
-  .row.content {height:auto;} 
-  .contain{
-    padding-bottom: 50%;
-    width: 10%;
-  }
- 
-}
-
-@media (min-width:480px){
-   .container-fluid{
-      display:block;
-    }
-  .row.content {height:auto;} 
-  .contain{
-    display: none;
-  }
-}
-
-/* ----------------tipografía--------------- */
-@font-face{
-  font-family:'OpenSans';
-  font-style: normal;
-  src: url('tipografias/OpenSans-Regular.ttf');
-}
-
-/* --------anatomia de la pagina------------ */
-
-body{
-  font-family:'OpenSans'; 
-}
-
-.contain {
-  width: 25%;
-  float: right;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width:80%;
-  background-size:cover;
-} 
-
-.row.content {height: 208px}
-
-/* bloque izq fondo gris */
-.sidenav {
-  padding: 15%;
-  background-color: #f1f1f1;
+html,body{
   height: 100%;
+  width: 100%;
 }
-
-.cohort {
-  background-color: yellow;
-  margin: 20px;
-  border-radius: 10px;
-  width: 350px;
-  height: 100px;
+body{
+  position: relative;
+  overflow-x: hidden;
 }
-
-/* alumnas */
-.myInput{
-  align-items: left;
+main{
+  height: calc(100% - 78px);
+  min-height: 550px!important;
+  overflow: hidden;
 }
-
+aside{
+  background-color: #f1f1ef;
+  z-index: 2;
+}
+section{
+  overflow: hidden;
+}
+aside .profile img{
+  border-radius: 50%;    
+}
+aside nav>ul>li>a {
+  display: block;
+  padding: 12px 40px;
+  font-weight: 500;
+  font-size: 1.2em;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+aside nav>ul>li.active>a, aside nav>ul>li>a:hover{
+  background-color: #f6e51c;
+  font-weight: 800;
+}
+#map{
+  position: absolute;
+  right: -150px;
+}
+.cohorts-header ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+.cohorts-header li {
+  background-color: #f1f1ef;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.cohorts-header li:nth-child(2){
+  border-left: 1px solid #d2d2d2;
+  border-right: 1px solid #d2d2d2;
+}
+.cohorts-header li.active {
+  background-color: #f6e51c;
+}
 .content {
-  border-radius: 10px;
-  background-color: yellow;
-  width: 300px;
-  height: 200px;
-  padding: 10px;
-  margin: 20px;
-  float: left;
+  background-color: #e3328d;
+  width: 350px;
+  text-align: center;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+.content p{
+  margin-bottom: 3px;
+}
+.cohorts-main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  overflow-y: auto;
+}
+.cohort {
+  width: 350px;
+  height: 39px;
+  background-color: #e3328d;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000;
+  line-height: 39px;
+}
+.cohorts-alumns{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 100%;
+}
+.cohorts-alumns .back{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+#result{
+  max-height: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.cohorts-alumns-container{
+  max-height: 100%;
+  overflow-y: auto;
+}
+.btn-back{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 3;
+}
+main>.row>section{
+  position: static;
+}
+@media(min-width: 900px) {
+  #map{
+      background-image: url('../imagenes/fondomapa.png');
+  }
 }
