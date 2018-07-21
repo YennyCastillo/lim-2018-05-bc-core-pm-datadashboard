@@ -46,12 +46,12 @@ Conclusiones:
 
 #### 2) Sketch de la solución (prototipo de baja fidelidad)
 - Realizado a mano alzada con lápiz y papel.
-![sketch](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-datadashboard/blob/ProyectoData/src/imagenes/sketch.gif?raw=true"title")
+![sketch](https://github.com/YennyCastillo/lim-2018-05-bc-core-pm-datadashboard/blob/ProyectoData/src/imagenes/sketch.gif?raw=true"title")
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 - Prototipo creado en ai (Adobe Illustrator). Utilizamos los archivos que enviaron actualizados de la línea gráfica de Laboratoria. 
 
-![prototipo](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-datadashboard/blob/ProyectoData/src/imagenes/prototipo.gif?raw=true"title")
+![prototipo](https://github.com/YennyCastillo/lim-2018-05-bc-core-pm-datadashboard/blob/ProyectoData/src/imagenes/prototipo.gif?raw=true"title")
 
 
 
@@ -75,7 +75,7 @@ _main.js_:usamos elementos del DOM para crear las funciones necesarias y que imp
 
 ¿Cómo fue todo esto posible?
 Con el sistema Kanvan realizamos un Planificador de tareas, hecho en papelógrafo con unas notitas en post-it junto para ir actualizado a diario las tareas realizadas durante los sprints.
-![planificador](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-datadashboard/blob/ProyectoData/src/imagenes/planificador_infinito.gif?raw=true"title")
+![planificador](https://github.com/YennyCastillo/lim-2018-05-bc-core-pm-datadashboard/blob/ProyectoData/src/imagenes/planificador_infinito.gif?raw=true"title")
 
 
 Gracias!
