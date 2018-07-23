@@ -6,9 +6,11 @@ body{
   position: relative;
   overflow-x: hidden;
 }
+header{
+  position: relative;
+}
 main{
-  height: calc(100% - 78px);
-  min-height: 550px!important;
+  height: calc(100% - 100px);
   overflow: hidden;
 }
 aside{
@@ -115,11 +117,29 @@ aside nav>ul>li.active>a, aside nav>ul>li>a:hover{
   bottom: 20px;
   z-index: 3;
 }
+.btn-back:hover{
+  background-color: #f6e51c;
+}
+main>.row>aside{
+  max-height: 100%;
+  overflow-y: auto;
+}
 main>.row>section{
   position: static;
+}
+#menuBtn {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 20px;
+  border: none;
+  background: none;
+  font-size: 2em;
 }
 @media(min-width: 900px) {
   #map{
       background-image: url('../imagenes/fondomapa.png');
+  }
+  #allSedes{
+      display: block;
   }
 }
