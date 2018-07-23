@@ -15,6 +15,9 @@
 <body>
   <header>
     <div class="container-fluid text-center">
+      <button id="menuBtn" class="d-none">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+      </button> 
       <h1>
         <img src="imagenes/Laboratoria_RGB_logo-06.png" width="250" height="70" alt="Logo">
       </h1>
@@ -30,7 +33,7 @@
             <h3 class="mb-1">ALEJANDRA</h3>
             <p class="mail">alejandra@laboratoria.la</p>
           </div>
-          <br>
+    
           <nav class="d-block">
             <ul class="list-unstyled p-0">
               <li>
@@ -48,6 +51,35 @@
               <li>
                 <a>
                   <span class="glyphicon glyphicon-cog"></span> &nbsp;&nbsp; CONFIGURACIÓN</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="d-block d-md-none">
+            <ul class="list-unstyled p-0">
+              <li>
+                <a>
+                  <span class="textSede"></span> &nbsp;&nbsp; Sedes</a>
+              </li>
+              <li>
+                <a onclick="selectSede('gdl')">
+                  <span class="textSede"></span> &nbsp;&nbsp; Guadalajara</a>
+              </li>
+              <li>
+                <a onclick="selectSede('cdmx')">
+                  <span class="textSede"></span> &nbsp;&nbsp; Ciudad de México</a>
+              </li>
+              <li>
+                <a onclick="selectSede('lim')">
+                  <span class="textSede"></span> &nbsp;&nbsp; Lima</a>
+              </li>
+              <li>
+                <a onclick="selectSede('spl')">
+                  <span class="textSede"></span> &nbsp;&nbsp; São Paulo</a>
+              </li>
+              <li>
+                <a onclick="selectSede('scl')">
+                  <span class="textSede"></span> &nbsp;&nbsp; Santiago de Chile</a>
               </li>
             </ul>
           </nav>

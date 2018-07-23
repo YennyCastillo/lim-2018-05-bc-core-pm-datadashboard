@@ -9,6 +9,9 @@ const extractJSON = (str, url, callback) => {
 
 const selectionSede = document.getElementById("map");
 const container = document.getElementById("result");
+const menuBtn = document.getElementById("menuBtn");
+const aside = document.getElementsByTagName('aside')[0];
+
 let selectOrderBy = undefined;
 let selectDirection = undefined;
 let search = undefined;
@@ -27,15 +30,30 @@ const options = {
 //EVENTOS DOM
 
 //Seleccionar sedes
-selectionSede.addEventListener("click", event => {
-   if (event.target.nodeName !== 'AREA') {
+selectionSede.addEventListener('click', event => {
+  //console.log(event.target.nodeName);
+  if (event.target.nodeName !== 'AREA') {
     return;
   }
+  //console.log(event.target);
   const id = event.target.id;
   extractJSON(id, "../data/cohorts.json", procesCohorts)
 })
+//Seleccionar sedes sin eventos
+function selectSede(id){
+  aside.classList.add('d-none');
+  menuBtn.classList.remove('d-none');
+
+  extractJSON(id, '../data/cohorts.json', procesCohorts)
+}
+
+menuBtn.addEventListener('click',event => {
+  menuBtn.classList.add('d-none');
+  aside.classList.remove('d-none');  
+});
 //Seleccionar cohorts de sede seleccionada
 container.addEventListener("click", event => {
+  //console.log(event.target);
   if (event.target.id === 'AREA') {
     return;
   }
@@ -43,7 +61,7 @@ container.addEventListener("click", event => {
     return;
   }
   const id = event.target.id;
-  
+  //console.log(id)
   extractJSON(id, "../data/cohorts.json", cohortSelected)
   extractJSON(id, "../data/cohorts/lim-2018-03-pre-core-pw/users.json", procesUsers)
 })
@@ -51,9 +69,11 @@ container.addEventListener("click", event => {
 
 //obteniendo cohorts de sedes seleccionada
 const procesCohorts = (id, arrCohorts) => {
-    const newArrCohort = arrCohorts.filter(element => {
+  //console.log(id, arrCohorts)
+  const newArrCohort = arrCohorts.filter(element => {
     return element.id.indexOf(id) !== -1;
   });
+  //console.log(newArrCohort);
   let cohort_name = getCohortName(id);
   let content = '';
   content += "<div class='cohorts-content d-flex flex-column w-100'><div class='cohorts-header'>";
@@ -63,7 +83,8 @@ const procesCohorts = (id, arrCohorts) => {
   content += "</div>";
   content += "<div class='cohorts-main'>";
   newArrCohort.forEach(cohort => {
-  content += `<div id=${cohort.id} class='cohort'>${cohort.id}</div>`
+    // console.log(newArrCohort);
+    content += `<div id=${cohort.id} class='cohort'>${cohort.id}</div>`
   });
   content += "</div>";
   content += genAlumnFilters;
@@ -77,7 +98,7 @@ const genAlumnFilters = `
   <div class='cohorts-alumns-container d-none'>
     <div id="tabla" >
         <div class="contain2 pb-3">
-          <div id="Filtros" class="d-flex">
+          <div id="Filtros" class="d-flex flex-column flex-md-row justify-content-center align-items-center">
             <div id="buscador" class="w-50 text-center">
               <p class="mb-2">Alumnas: </p>
               <input type="text" placeholder="Buscar nombre" id="search">
@@ -220,3 +241,4 @@ const alumns_container = {
     alumns_container.container.classList.remove("d-none");
   }
 }
+
